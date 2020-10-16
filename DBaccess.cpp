@@ -1,11 +1,12 @@
 #include <string> 
 #include <iostream>
+#include "student.cpp" 
 // TODO: create a student object with ID, Name, class list, units, several other things that I dont know what
-
+// TODO: create a class struct with unit number, id, professor, time,  
 //will eventually interface with a db, but now is just a placeholder.
-void insertStudent(int id, std::string name){
-    std::cout << name << std::endl;
-    std::cout << id << std::endl;
+void insertStudent(Student student){
+    std::cout << student.getName() << std::endl;
+    std::cout << student.getId() << std::endl;
 }
 
 void removeStudent(int id){
@@ -18,7 +19,7 @@ void getStudent(int id){
 }
 
 int main(){
-    std::string name = "Devin";
-    insertStudent(1234, name);
+    Student devin = Student(1234, "Devin Kadrie", 180, std::vector<Course>(), "Computer Science");
+    insertStudent(devin);
     return 0;
 }
